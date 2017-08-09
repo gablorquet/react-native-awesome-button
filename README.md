@@ -1,3 +1,6 @@
+###
+This is a fork of the original to fix the peer dependencies problems in package.json
+
 ### React Native Awesome Button
 An `<AwesomeButton />` component that creates a button depicting different states in terms of e.g. color and label text. When a new buttonState is passed to the component the button will animate transition to the new appearance specified upon initiation. You can also pass in different functions to be called on touch depending of the current state of the button.
 
