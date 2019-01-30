@@ -64,6 +64,7 @@ class AwesomeButton extends Component {
     return (
       <View>
         <ButtonView
+          testID={this.props.testID || this.props.accessibilityLabel}
           backgroundStyle={[backgroundStyle, { backgroundColor }]}
           labelStyle={labelStyle}
           text={text}

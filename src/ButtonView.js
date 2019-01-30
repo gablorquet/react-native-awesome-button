@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ActivityIndicator, Animated, View, StyleSheet, Text, TouchableOpacity } from 'react-native';
-
+import { testID } from './utils';
 
 const ButtonView = (props) => {
   const styles = StyleSheet.flatten({
@@ -13,19 +13,20 @@ const ButtonView = (props) => {
       onPress={props.onPress}
       activeOpacity={0.9}
       disabled={props.disabled}
+      {...testID(props.testID)}
     >
       <Animated.View style={styles.backgroundStyle}>
         <View style={{ flexDirection: 'row' }}>
-          { (props.icon && props.iconAlignment === 'left') ?
+          {(props.icon && props.iconAlignment === 'left') ?
             props.icon
             : null
           }
-          { props.spinner ?
+          {props.spinner ?
             <ActivityIndicator {...props.spinnerProps} style={{ marginRight: 10 }} />
             : null
           }
           <Text style={styles.labelStyle}>{props.text}</Text>
-          { (props.icon && props.iconAlignment === 'right') ?
+          {(props.icon && props.iconAlignment === 'right') ?
             props.icon
             : null
           }
@@ -67,7 +68,7 @@ ButtonView.defaultProps = {
   disabled: true,
   icon: null,
   iconAlignment: null,
-  onPress: (() => {}) // work-around to suppress eslinters no-default-prop
+  onPress: (() => { }) // work-around to suppress eslinters no-default-prop
 };
 
 export default ButtonView;
